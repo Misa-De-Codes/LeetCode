@@ -2,13 +2,39 @@
 using namespace std;
 
 // Sum if the first n numbers
-void sum()
+/*void sum(int i, int total = 0)
 {
-    cout << "Hellow susie!";
+    if (i < 1){
+        cout << "Hellow susie!  "<< total;
+        return;
+    }
+    sum(i - 1, total + i);
 }
+*/
+/* Also return the sum
+int sum(int i)
+{
+    if (i == 0){
+        return 0;
+    }
+    return i + sum(i - 1);
+
+}
+    */
+
+
+int sum(int i)
+{
+    if (i <= 0){
+        return 0;
+    }
+    return i + sum(i - 1);
+
+}
+
 
 int main()
 {
-    sum();
+    cout << sum(-6);
     return 0;
 }
