@@ -1,26 +1,21 @@
 #include <iostream>
 using namespace std;
 
-void sort()
+bool checkSort(int arr[], int n)
 {
-    
+    for (int i  = 1; i < n-1; i++)
+    {
+        if (arr[i] < arr[i-1]){
+            return false;
+        }
+    }
+    return true;
 }
+
 
 int main()
 {
-    int arr1[7] = {10, 10, 43, 25, 7, 43, 18};
-    int arr2[10] = {
-        2,
-        -43,
-        54,
-        2,
-        -34,
-        232,
-        -434,
-        43,
-        55,
-        -9};
-  
-    sort();
+    int arr3[7] = {1, 2, 3, 4, 5, 6, 8};
+    cout << checkSort(arr3, 7);
     return 0;
 }
