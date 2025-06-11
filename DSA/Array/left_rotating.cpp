@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <algorithm>
 using namespace std;
 
 // single rotate
@@ -50,9 +50,20 @@ void rotateByPlaces1(int arr[], int n, int placeNo)
     }
 }
 
-void rotateByPlaces2(int arr[], int n, int placeNo)
+
+// ❌ needs to be learnt
+void rotateByPlaces2(int arr[], int start, int end)
 {
-    
+    while(start <= end){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+    for( int i = 0; i < 9; i++){
+        cout << arr[i] << ' ';
+    }
 }
 
 
@@ -61,7 +72,7 @@ int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    rotateByPlaces2(arr, 9, 4);
+    rotateByPlaces2(arr, 0, 1);
 
     return 0;
 }
